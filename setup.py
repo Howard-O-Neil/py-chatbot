@@ -9,11 +9,11 @@ with open(os.path.abspath('README.md')) as fh:
     README = fh.read()
 
 setup(
-    name='flask-skeleton',
+    name='py-chatbot',
     version='0.1.0',
     description=README,
-    author='Stephen Holsapple',
-    author_email='sholsapp@gmail.com',
+    author='Ming Khoi',
+    author_email='mingkhoitran1234@gmail.com',
     url='http://www.flask.com',
     packages=find_packages(),
     zip_safe=False,
