@@ -1,0 +1,48 @@
+version: "3.5"
+
+services:
+  py-chatbot-application:
+    restart: always
+    networks:
+      - py-chatbot
+    hostname: py-chatbot-application
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "8082:5000"
+    env_file:
+      - development.env
+    volumes:
+      - ./cdn:/cdn
+  py-chatbot-database:
+    image: postgres:13.3-alpine
+    restart: always
+    networks:
+      - py-chatbot
+    hostname: py-chatbot-database
+    ports:
+      - "5432:5432"
+      - "5433:5433"
+    env_file:
+      - development.env
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+  py-chatbot-adminer:
+    depends_on:
+      - "py-chatbot-database"
+    image: adminer:4.8.0-standalone
+    restart: always
+    networks:
+      - py-chatbot
+    hostname: py-chatbot-adminer
+    ports:
+      - "8080:8080"
+
+networks:
+  py-chatbot:
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.2.0.0/27"

@@ -65,3 +65,8 @@ docs/_build/
 *.deb
 
 my-env/
+env/
+cdn/
+pgdata/
+__pycache__/
+.vscode/

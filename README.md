@@ -27,6 +27,12 @@ integration, deleting this code should be straight forward.
 - [Bootstrapping Alembic](./docs/bootstrapping-alembic.md)
 - [Configuration](./docs/configuration.md)
 
+# Installation
+
+```bash
+  make bootstrap
+```
+
 # Quickstart
 
 Use Docker to build and run the webapp locally.
