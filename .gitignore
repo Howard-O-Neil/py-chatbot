@@ -68,5 +68,5 @@ my-env/
 env/
 cdn/
 pgdata/
-__pycache__/
+**/__pycache__/
 .vscode/

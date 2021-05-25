@@ -1,8 +1,10 @@
+# this compose file use for dev only
+
 version: "3.5"
 
 services:
   py-chatbot-application:
-    restart: always
+    # restart: always
     networks:
       - py-chatbot
     hostname: py-chatbot-application
