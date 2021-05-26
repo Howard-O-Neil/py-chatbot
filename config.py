@@ -12,10 +12,10 @@ def loadEnv():
 loadEnv()
 
 class Config(object):
-  # DB_HOST = os.environ.get('POSTGRES_HOST'),
-  # DB_USER = os.environ.get('POSTGRES_USER'),
-  # DB_PASS = os.environ.get('POSTGRES_PASSWORD'),
-  # DB_NAME = os.environ.get('POSTGRES_DB'),
+  DB_HOST = os.environ.get('POSTGRES_HOST'),
+  DB_USER = os.environ.get('POSTGRES_USER'),
+  DB_PASS = os.environ.get('POSTGRES_PASSWORD'),
+  DB_NAME = os.environ.get('POSTGRES_DB'),
 
   # app config 
   SECRET_KEY = os.environ.get('SECRET_KEY'),
