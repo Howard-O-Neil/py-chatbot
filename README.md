@@ -1,8 +1,7 @@
 
 # Python ChatBot
 
-A project of building chatbot support for software business
-
+> A project of building chatbot support for software business  
 A setup made with Flask, Gunicorn, Alchemy, Alembic
 
 - A LAMP Stack done right
