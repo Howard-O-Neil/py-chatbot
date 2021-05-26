@@ -9,8 +9,6 @@ A setup made with Flask, Gunicorn, Alchemy, Alembic
   - MySql replaced by PostgreSql
   - PHP (come on dude 🙂) replaced by Python
 
-<br>
-
 - Some key feature
   - No Sql
     - Sync PostgreSql table schema with python data models
@@ -24,8 +22,6 @@ A setup made with Flask, Gunicorn, Alchemy, Alembic
   - Integrate with [DialogFlow](https://cloud.google.com/dialogflow/docs)
   - Integrate with [Facebook API](https://developers.facebook.com/)
   - Deploy with [AWS](https://aws.amazon.com/?nc2=h_lg)
-
-<br>
 
 - Some helpful document
   - [APScheduler](https://apscheduler.readthedocs.io/en/latest/index.html)
