@@ -5,7 +5,7 @@ version: "3.5"
 services:
   py-chatbot-application:
     depends_on:
-      - "py-chatbot-dns"
+      - "py-chatbot-database"
     restart: always
     networks:
       - py-chatbot
@@ -22,8 +22,6 @@ services:
       - ./app.py:/app.py
       - ./config.py:/config.py
   py-chatbot-database:
-    depends_on:
-      - "py-chatbot-dns"
     image: postgres:13.3-alpine
     restart: always
     networks:
@@ -40,7 +38,6 @@ services:
   py-chatbot-adminer:
     depends_on:
       - "py-chatbot-database"
-      - "py-chatbot-dns"
     image: adminer:4.8.0-standalone
     restart: always
     networks:

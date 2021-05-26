@@ -11,7 +11,6 @@ app.config.from_object(Config)
 migrate = Migrate(app, db)
 manager = Manager(app)
 
-
 @manager.option('-n', '--name', dest='name')
 def hello(name):
   print("hello", name)

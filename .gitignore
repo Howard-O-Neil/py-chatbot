@@ -70,3 +70,4 @@ cdn/
 pgdata/
 **/__pycache__/
 .vscode/
+backup/
