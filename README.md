@@ -2,7 +2,8 @@
 # Python ChatBot
 
 A project of building chatbot support for software business
-A project's setup made with Flask, Gunicorn, Alchemy, Alembic
+
+A setup made with Flask, Gunicorn, Alchemy, Alembic
 
 - A LAMP Stack done right
   - MySql replaced by PostgreSql
