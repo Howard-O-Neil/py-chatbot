@@ -5,4 +5,7 @@ bootstrap:
 	. env/bin/activate
 	pip install -r requirement.txt
 
+setup-dns:
+	docker-compose -f docker-proxy-dns.yaml up
+
 # backup-data:

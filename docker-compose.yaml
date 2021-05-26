@@ -49,15 +49,6 @@ services:
     ports:
       - "8080:8080"
 
-  py-chatbot-dns:
-    image: defreitas/dns-proxy-server
-    ports:
-      - "5380:5380"
-    hostname: py-chatbot-dns
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /etc/resolv.conf:/etc/resolv.conf
-
 networks:
   py-chatbot:
     ipam:
