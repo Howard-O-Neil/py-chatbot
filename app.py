@@ -7,8 +7,6 @@ app.config.from_object(Config)
 
 db = SQLAlchemy(app)
 
-from models import * # for database migration
-
 @app.route('/')
 def index():
   return "py-chatbot version 1.0"

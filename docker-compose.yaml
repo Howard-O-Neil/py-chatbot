@@ -4,7 +4,9 @@ version: "3.5"
 
 services:
   py-chatbot-application:
-    # restart: always
+    depends_on:
+      - "py-chatbot-dns"
+    restart: always
     networks:
       - py-chatbot
     hostname: py-chatbot-application
@@ -15,9 +17,13 @@ services:
       - "8082:5000"
     env_file:
       - development.env
-    volumes:
-      - ./cdn:/cdn
+    volumes: # live reload from soure code
+      - ./modules:/modules
+      - ./app.py:/app.py
+      - ./config.py:/config.py
   py-chatbot-database:
+    depends_on:
+      - "py-chatbot-dns"
     image: postgres:13.3-alpine
     restart: always
     networks:
@@ -34,6 +40,7 @@ services:
   py-chatbot-adminer:
     depends_on:
       - "py-chatbot-database"
+      - "py-chatbot-dns"
     image: adminer:4.8.0-standalone
     restart: always
     networks:
@@ -41,6 +48,15 @@ services:
     hostname: py-chatbot-adminer
     ports:
       - "8080:8080"
+
+  py-chatbot-dns:
+    image: defreitas/dns-proxy-server
+    ports:
+      - "5380:5380"
+    hostname: py-chatbot-dns
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/resolv.conf:/etc/resolv.conf
 
 networks:
   py-chatbot:
