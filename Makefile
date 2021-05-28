@@ -6,7 +6,26 @@ bootstrap:
 	pip install -r requirement.txt
 
 setup-dns:
-	docker-compose -f docker-proxy-dns.yaml up
+	docker-compose -f docker-proxy-dns.yaml up -d
+
+reset-dns:
+	docker-compose -f docker-proxy-dns.yaml restart
+
+turnoff-dns:
+	docker-compose -f docker-proxy-dns.yaml down
+
+db-rm-revision:
+	rm migrations/versions/${id}_.py
+
+db-gen-migrate:
+	./script/db-gen-migrate.sh
+
+db-revert:
+	./script/db-downgrade.sh
+
+db-migrate:
+	./script/db-gen-migrate.sh
+	python manage.py db upgrade
 
 auth-script:
 	chmod 777 script/*

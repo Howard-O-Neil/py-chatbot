@@ -20,9 +20,10 @@ class Config(object):
   # app config 
   SECRET_KEY = os.environ.get('SECRET_KEY'),
   FLASK_ENV = os.environ.get('FLASK_ENV'),
-  FLASK_APP = os.environ.get('FLASK_APP')
+  FLASK_APP = os.environ.get('FLASK_APP'),
+  JWT_SECRET = os.environ.get('JWT_SECRET'),
 
 
-  SQLALCHEMY_DATABASE_URI = f"postgresql://{os.environ.get('POSTGRES_USER')}:{os.environ.get('POSTGRES_PASSWORD')}@{os.environ.get('POSTGRES_HOST')},{os.environ.get('POSTGRES_PORT')}/{os.environ.get('POSTGRES_DB')}"
+  SQLALCHEMY_DATABASE_URI = f"postgresql://{os.environ.get('POSTGRES_USER')}:{os.environ.get('POSTGRES_PASSWORD')}@{os.environ.get('POSTGRES_HOST')}:{os.environ.get('POSTGRES_PORT')}/{os.environ.get('POSTGRES_DB')}"
   SQLALCHEMY_ECHO = True
   SQLALCHEMY_TRACK_MODIFICATIONS = False
