@@ -9,3 +9,6 @@ from .project import *
 from .epic import *
 from .theme import *
 from .backlog import *
+from .task import *
+from .log import *
+from .ac import *

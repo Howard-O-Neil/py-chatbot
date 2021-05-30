@@ -25,7 +25,7 @@ db-revert:
 
 db-migrate:
 	./script/db-gen-migrate.sh
-	python manage.py db upgrade
+	flask db upgrade
 
 auth-script:
 	chmod 777 script/*
