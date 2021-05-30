@@ -2,6 +2,7 @@ from sqlalchemy.orm import relationship
 from app import db
 from sqlalchemy import Float, String, DateTime, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
+from datetime import datetime
 
 class UserProject(db.Model):
   __tablename__ = 'user_project'
@@ -18,8 +19,8 @@ class Project(db.Model):
   goal = db.Column(String, nullable=False)
   description = db.Column(String, nullable=False)
   estimated_hours = db.Column(Float, nullable=False)
-  created_at = db.Column(DateTime, nullable=False)
-  updated_at = db.Column(DateTime, nullable=False)
+  created_at = db.Column(DateTime, nullable=False, default=datetime.utcnow)
+  updated_at = db.Column(DateTime, nullable=False, default=datetime.utcnow)
   deleted_at = db.Column(DateTime, nullable=True)
 
   # relationship

@@ -12,10 +12,13 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+
 db.init_app(app)
 migrate.init_app(app, db)
 
-from models import *
+__import__('entities')
+__import__('application')
+
 
 @app.route('/')
 def index():
@@ -23,17 +26,15 @@ def index():
 
 # group command
 @click.group()
-def test(): pass
+def user(): pass
 
-@test.command()
-@click.argument('name')
-def hello(name):
-  print(os.environ.get('POSTGRES_HOST'))
-  print("hello", name)
+@click.group()
+def secure(): pass
 
 # add group
-app.cli.add_command(test)
+app.cli.add_command(user)
+app.cli.add_command(secure)
 
 if __name__ == '__main__':
   if Config.FLASK_ENV != 'production': app.run(debug=True)
-  else: app.run(debug=False)  
+  else: app.run(debug=False)

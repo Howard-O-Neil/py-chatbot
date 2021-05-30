@@ -1,3 +1,4 @@
+from datetime import datetime
 from sqlalchemy.orm import relationship
 from app import db
 from sqlalchemy import String, DateTime
@@ -11,8 +12,8 @@ class User(db.Model):
   name = db.Column(String(100), nullable=False)
   phone = db.Column(String(15), nullable=False)
   email = db.Column(String, nullable=False)
-  created_at = db.Column(DateTime, nullable=False)
-  updated_at = db.Column(DateTime, nullable=False)
+  created_at = db.Column(DateTime, nullable=False, default=datetime.utcnow)
+  updated_at = db.Column(DateTime, nullable=False, default=datetime.utcnow)
   deleted_at = db.Column(DateTime, nullable=True)
 
   # relationship

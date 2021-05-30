@@ -2,6 +2,7 @@ from sqlalchemy.orm import relationship
 from app import db
 from sqlalchemy import Integer, Float, String, DateTime, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
+from datetime import datetime
 
 class Backlog(db.Model):
   __tablename__ = 'backlog'
@@ -16,6 +17,6 @@ class Backlog(db.Model):
   goal = db.Column(String, nullable=False)
   description = db.Column(String, nullable=False)
   point = db.Column(Integer, nullable=False)
-  created_at = db.Column(DateTime, nullable=False)
-  updated_at = db.Column(DateTime, nullable=False)
+  created_at = db.Column(DateTime, nullable=False, default=datetime.utcnow)
+  updated_at = db.Column(DateTime, nullable=False, default=datetime.utcnow)
   deleted_at = db.Column(DateTime, nullable=True)

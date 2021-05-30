@@ -2,6 +2,7 @@ from sqlalchemy.orm import relationship
 from app import db
 from sqlalchemy import Integer, Float, String, DateTime, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
+from datetime import datetime
 
 class Task(db.Model):
   __tablename__ = 'task'
@@ -13,6 +14,6 @@ class Task(db.Model):
   status = db.Column(String, nullable=False)
   name = db.Column(String, nullable=False)
   estimated_hours = db.Column(Float, nullable=False)
-  created_at = db.Column(DateTime, nullable=False)
-  updated_at = db.Column(DateTime, nullable=False)
+  created_at = db.Column(DateTime, nullable=False, default=datetime.utcnow)
+  updated_at = db.Column(DateTime, nullable=False, default=datetime.utcnow)
   deleted_at = db.Column(DateTime, nullable=True)

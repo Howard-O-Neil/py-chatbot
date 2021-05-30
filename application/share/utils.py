@@ -1,5 +1,6 @@
 import shutil
 from flask.json import jsonify
+from pprint import pprint
 import requests
 import uuid
 
@@ -10,3 +11,6 @@ def rawImage(number):
     response = requests.get(url, stream=True)
     with open(f'static/{uuid.uuid4()}.png', 'wb') as out_file:
       shutil.copyfileobj(response.raw, out_file)
+
+def print_all(object):
+  pprint(vars(object))
