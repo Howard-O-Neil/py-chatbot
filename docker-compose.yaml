@@ -18,9 +18,10 @@ services:
     env_file:
       - development.env
     volumes: # live reload from soure code
-      - ./application:/application
-      - ./config.py:/config.py
-      - ./app.py:/app.py
+      - ./application:/home/app/application
+      - ./entities:/home/app/entities
+      - ./config.py:/home/app/config.py
+      - ./app.py:/home/app/app.py
   py-chatbot-database:
     image: postgres:13.3-alpine
     restart: always
