@@ -71,3 +71,5 @@ pgdata/
 **/__pycache__/
 .vscode/
 backup/
+gunicorn.error.log
+gunicorn.log

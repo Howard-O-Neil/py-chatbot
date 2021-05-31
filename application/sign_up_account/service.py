@@ -8,6 +8,5 @@ class Service:
         print(data)
 
         res = repository.add_data(User(**data))
-        print(res)
 
 service = Service()

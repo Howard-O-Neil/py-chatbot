@@ -12,6 +12,7 @@ from .service import service
 @utils.validate(SignUpDto)
 def sign_up(data):
     # print(data)
+    print("=============== con cac ===============")
     service.sign_up(data)
     return 'hello world'
 

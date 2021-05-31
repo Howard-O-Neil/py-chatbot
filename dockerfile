@@ -11,4 +11,4 @@ COPY requirement.txt /home/app/
 WORKDIR /home/app
 RUN pip install -r requirement.txt
 
-CMD ["gunicorn", "-w", "2", "-b", ":5000", "--reload", "app:app"]
+# CMD ["gunicorn", "-w", "2", "-b", ":5000", "--reload", "app:app"]
