@@ -1,8 +1,9 @@
 import test
+
 # from flask import request
 from imp import reload
 
-print(rand) 
+print(rand)
 reload(test)
 
 print(rand)

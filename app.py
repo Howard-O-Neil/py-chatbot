@@ -16,25 +16,32 @@ migrate = Migrate(app, db)
 db.init_app(app)
 migrate.init_app(app, db)
 
-__import__('entities')
-__import__('application')
-
-
-@app.route('/')
-def index():
-  return "py-chatbot version 1.0"
 
 # group command
-@click.group()
-def user(): pass
+@click.group('user')
+def user_cli_group():
+    pass
 
-@click.group()
-def secure(): pass
+
+@click.group('secure')
+def secure_cli_group():
+    pass
+
 
 # add group
-app.cli.add_command(user)
-app.cli.add_command(secure)
+app.cli.add_command(user_cli_group)
+app.cli.add_command(secure_cli_group)
 
-if __name__ == '__main__':
-  if Config.FLASK_ENV != 'production': app.run(debug=True)
-  else: app.run(debug=False)
+__import__("entities")
+__import__("application")
+
+
+@app.route("/")
+def index():
+    return "py-chatbot version 1.0"
+
+if __name__ == "__main__":
+    if Config.FLASK_ENV != "production":
+        app.run(debug=True)
+    else:
+        app.run(debug=False)
