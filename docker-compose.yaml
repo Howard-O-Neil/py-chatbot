@@ -17,7 +17,7 @@ services:
       - "8082:5000"
     env_file:
       - development.env
-    volumes: # live reload from soure code
+    volumes: # live monitor from soure code
       - ./application:/home/app/application
       - ./entities:/home/app/entities
       - ./gunicorn.error.log:/home/app/gunicorn.error.log
