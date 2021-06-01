@@ -18,7 +18,7 @@
   - `Workload`: Số giờ 1 người trong team **cam kết** làm việc trong 1 `Project-Working Week` (tuần của dự án)
     - tuần dự án khác tuần thông thường; 1 tuần thông thường bắt đầu từ thứ 2, kết thúc vào thứ 7, tuần dự án có thể bắt đầu thứ 7, kết thúc thứ 6. Một số trường hợp đặc biệt, tuần dự án chỉ có 4 ngày thay vì 7, tuy nhiên case này khá là hiếm gặp.
   - `Review tuần`: Mỗi người team tự review lại `Project-Working Week` của mình. Có gì tốt, có gì xấu diễn ra trong tuần dự án vừa rồi
-- Tạo ra một hệ thống phần mềm để thực thi quản trị `Scrum` là cần thiết, nhưng vấn đề đặt ra là: làm sao để nhân viên làm quen với cách quản trị dự án bằng `Scrum`; làm sao để nhân viên chủ động hơn, thoái mái hơn trong chuyện `Logwork`, `Tracking Team's Velocity`, `Update Workload`, `Review tuần`. Nhân viên cũ còn chưa chắc đã làm đúng, nhân viên mới lại càng khó hơn.
+- Tạo ra một hệ thống phần mềm để thực thi quản trị `Scrum` là cần thiết, nhưng vấn đề đặt ra là: làm sao để nhân viên làm quen với cách quản trị dự án bằng `Scrum`; làm sao để nhân viên chủ động hơn, thoải mái hơn trong chuyện `Logwork`, `Tracking Team's Velocity`, `Update Workload`, `Review tuần`. Nhân viên cũ còn chưa chắc đã làm đúng, nhân viên mới lại càng khó hơn.
 - Ta có nhiều cách để giải quyết vấn đề, một trong những cách thú vị và hay ho đó là sử dụng `Chatbot`. Ý tưởng là ta tạo một con Chatbot tích hợp với các flatform nhắn tin (Ex: Facebook Messenger) để tương tác với nhân viên; nhân viên có thể ra lệnh cho Chatbot (Ex: `Logwork`); Chatbot có thể thông báo, cập nhật thông tin cho nhân viên (Ex: `Velocity` của team cao quá).
 - Việc xây dựng `Chatbot` không những giúp doanh nghiệp xây dựng được văn hóa làm việc hiện đại, sống động, bên cạnh đó còn giúp nhân viên chủ động hơn trong việc thực thi `Scrum` để quản lý công việc. Càng về lâu, về dài, `Metrics` thu thập được càng nhiều, ước lượng chi phí phần mềm sẽ chính xác hơn. 
 
@@ -27,7 +27,7 @@
 ![py-chatbot-architecture](https://i.imgur.com/691PwEj.png)
 
 ##### <u>chú thích</u>
-- **application** là `Container` chứa các `Busines Logic` của công ty, phục vụ cho mục đích thực thi `Scrum` để quản trị dự án
+- **Application** là `Container` chứa các `Busines Logic` của công ty, phục vụ cho mục đích thực thi `Scrum` để quản trị dự án
 - **AWS EC2** là dịch vụ `Hosting` được cung cấp để host các service, website...
 - **Dialogflow** là engine sử dụng `AI` để xây dựng một `NLP model`
   - `NLP model` bản chất là một con bot có khả năng chiết xuất được `Intent` (ý định) từ input của người dùng, từ đó thực hiện `Action` (hành động) tương ứng với Intent đó
@@ -39,11 +39,11 @@
 ###### Đã hoàn thành
 |Epics|
 |-|
-|Setup application với Flask và Map thư viện vào VirtualENV
+|Setup Application với Flask và Map thư viện vào VirtualENV
 |Thiết kế  và cài đặt hạ tầng ứng dụng với Docker
 |Thiết kế  và cài đặt Database Migration Cli với SqlAlchemy
 |Thiết kế  và cài đặt cấu trúc Database
-|Thiết kế cấu trúc application's source-code
+|Thiết kế cấu trúc Application's source-code
 |Setup Team-Working Space trong DialogFlow
 |Thiết kế Intent cho DialogFlow Bot
 |Setup tích hợp các WebHooks trong DialogFlow Bot
@@ -53,11 +53,11 @@
 |Epics|
 |-|
 |Tích hợp Facebook Messenger
-|Tích hợp DialogFlow Bot giao tiếp với application
+|Tích hợp DialogFlow Bot giao tiếp với Application
 |Application cài đặt thêm cấu trúc bảo mật cấp key theo request từ DialogFlow Agent 
 
 ###### Sản phẩm đến hiện tại
-- phần application trong kiến trúc hệ thống đã hoàn thành được 70%:
+- phần Application trong kiến trúc hệ thống đã hoàn thành được 70%:
   - bảo mật các API bằng token JWT
   - cache token bằng sessionID, lưu ở máy client
   - Database Schema
