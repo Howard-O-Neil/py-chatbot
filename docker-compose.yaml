@@ -1,0 +1,44 @@
+# this compose file use for dev only
+
+version: "3.5"
+
+services:
+  py-chatbot-application:
+    depends_on:
+      - py-chatbot-database
+    restart: always
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - 8082:5000
+    env_file:
+      - production.env
+    volumes: # live monitor from soure code
+      - ./production.env:/home/app/production.env
+      - ./app.py:/home/app/app.py
+      - ./config.py:/home/app/config.py
+      - ./gunicorn.config.py:/home/app/gunicorn.config.py
+      - ./application:/home/app/application
+      - ./entities:/home/app/entities
+      - ./gunicorn.error.log:/home/app/gunicorn.error.log
+      - ./gunicorn.log:/home/app/gunicorn.log
+    command: gunicorn -w 2 -b :5000 -c gunicorn.config.py app:app
+  py-chatbot-database:
+    image: postgres:13.3-alpine
+    restart: always
+    env_file:
+      - production.env
+    ports:
+      - 5432:5432
+      - 5433:5433
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+  py-chatbot-adminer:
+    depends_on:
+      - py-chatbot-database
+    image: adminer:4.8.0-standalone
+    restart: always
+    ports:
+      - 8080:8080
