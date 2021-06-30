@@ -8,8 +8,8 @@ import json
 
 class Service:
     @utils.handle_service_error
-    def check_is_signed_project(self, admin_id, team_id):
-        res = repository.find_by_admin_team(admin_id, team_id)
+    def check_is_signed_project(self, team_id):
+        res = repository.find_by_team_id(team_id)
         if len(res) == 0:
             return json.dumps({
                 "status": "failed",

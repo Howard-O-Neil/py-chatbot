@@ -50,6 +50,8 @@ def get_my_task(data):
     user_id = data["userId"]
     current_intent = data["currentIntent"]
 
+    stdout(data)
+
     response_content = ""
     list_doing_task = service.get_available_doing_task(user_id.split(":")[1], user_id)
     if len(list_doing_task) == 0:

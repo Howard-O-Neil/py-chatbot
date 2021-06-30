@@ -15,14 +15,16 @@ services:
     env_file:
       - production.env
     volumes: # live monitor from soure code
+      - ./development.env:/home/app/development.env
       - ./production.env:/home/app/production.env
       - ./app.py:/home/app/app.py
       - ./config.py:/home/app/config.py
+      - ./dtb_config_manage.py:/home/app/dtb_config_manage.py
       - ./gunicorn.config.py:/home/app/gunicorn.config.py
-      - ./application:/home/app/application
-      - ./entities:/home/app/entities
       - ./gunicorn.error.log:/home/app/gunicorn.error.log
       - ./gunicorn.log:/home/app/gunicorn.log
+      - ./application:/home/app/application
+      - ./entities:/home/app/entities
     command: gunicorn -w 2 -b :5000 -c gunicorn.config.py app:app
   py-chatbot-database:
     image: postgres:13.3-alpine

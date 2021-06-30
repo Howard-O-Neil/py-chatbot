@@ -26,7 +26,8 @@ class Project(db.Model):
     description = db.Column(String, nullable=False)
     estimated_hours = db.Column(Float, nullable=False)
     slack_team_id = db.Column(String, nullable=False, unique=True)
-    slack_team_admin_id = db.Column(String, nullable=False, unique=True)
+    slack_member_monitor_token = db.Column(String, nullable=False, unique=True)
+    slack_bot_token = db.Column(String, nullable=False, unique=True)
     created_at = db.Column(DateTime, nullable=False, default=func.now())
     updated_at = db.Column(
         DateTime, nullable=False, default=func.now(), onupdate=func.now()

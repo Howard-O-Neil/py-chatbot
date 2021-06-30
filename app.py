@@ -43,7 +43,6 @@ def user_group():
 def notification_group():
     pass
 
-
 # add group
 app.cli.add_command(project_group)
 app.cli.add_command(user_group)
@@ -51,7 +50,7 @@ app.cli.add_command(notification_group)
 
 __import__("entities")
 __import__("application")
-
+__import__("dtb_config_manage")
 
 @app.route("/")
 def index():

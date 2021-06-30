@@ -19,9 +19,11 @@ class Service:
         slack_id = f'{Config.AWS_LEX_SLACK_CHANNEL}:{data["event"]["user"]["team_id"]}:{data["event"]["user"]["id"]}'
         user = repository.get_user_by_slack_id(slack_id)
 
-        if user.deleted_at == None:
-            return repository.remove_user(slack_id)
-        else: return repository.activate_user(slack_id)
+        if user != None:
+            if user.deleted_at == None:
+                return repository.remove_user(slack_id)
+            else: return repository.activate_user(slack_id)
+        return ""
     
     @utils.handle_service_error
     def user_join_handle(self, data):

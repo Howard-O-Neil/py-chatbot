@@ -1,0 +1,2 @@
+https://slack.com/oauth/v2/authorize?client_id=2203407631381.2221637314209&scope=channels:read,groups:read,usergroups:read,team:read,users:read&user_scope=
+https://slack.com/oauth/v2/authorize?client_id=2203407631381.2204845933429&scope=channels:read,chat:write,im:history,chat:write.public&user_scope=

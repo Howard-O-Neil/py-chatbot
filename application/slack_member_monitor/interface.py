@@ -7,33 +7,6 @@ from app import app
 
 from .service import service
 
-
-@app.route(f"{ApiGroup.USER.value}/help", methods=["POST"])
-@utils.request_with_body
-def user_help(data):
-    current_intent = data["currentIntent"]
-
-    response_content = ""
-    for item in [
-        "show some available meeting duration",
-        "i want a meeting",
-        "show some available task",
-        "my current task",
-        "mark done task",
-        "i want logwork",
-    ]:
-        response_content += f'\n>{item}'
-
-    result = dialogUtils.close("Fulfilled")
-    result["dialogAction"]["message"] = {
-        "contentType": "PlainText",
-        "content": f"Here are some recommend command:\n\n {response_content}",
-    }
-
-    return result
-
-
-
 @app.route(f"{ApiGroup.SLACK_MEMBER.value}/member/event", methods=["POST"])
 @utils.request_with_body
 def slack_member_monitor(data):

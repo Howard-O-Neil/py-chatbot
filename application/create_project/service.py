@@ -17,12 +17,19 @@ import json
 
 class Service:
     @utils.handle_service_error
+    def sign_up_project_token(self, data):
+        stdout(data)
+
+        return {
+            "message": "failed"
+        }
+
+    @utils.handle_service_error
     def add_project(self, data):
         project = Project(
             name=data["name"],
             estimated_hours=1000.0,
             slack_team_id=data["slack_team_id"],
-            slack_team_admin_id=data["slack_team_admin_id"],
             description=fake.paragraph(nb_sentences=5),
             goal=fake.text(max_nb_chars=100),
         )

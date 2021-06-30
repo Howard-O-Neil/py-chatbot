@@ -8,6 +8,12 @@ class Repository:
         db.session.add(data)
         db.session.commit()
 
+    def find_by_team_id(self, team_id):
+        return Project.query.filter(
+            Project.slack_team_id==team_id
+        ).all()
+
+
     def find_by_admin_team(self, admin_id, team_id):
         return Project.query.filter(
             or_(

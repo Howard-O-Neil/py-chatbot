@@ -12,7 +12,8 @@ class User(db.Model):
     __tablename__ = "user"
 
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4())
-    slack_id = db.Column(String, nullable=False, unique=True)
+    slack_user_id = db.Column(String, nullable=False, unique=True)
+    type = db.Column(String, nullable=False)
     name = db.Column(String(100), nullable=True)
     phone = db.Column(String(15), nullable=True)
     email = db.Column(String, nullable=True)
