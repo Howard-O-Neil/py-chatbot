@@ -1,11 +1,11 @@
 
 # Python ChatBot
 
-# Architecture
+## Architecture
 ![210524615_262279962323802_1525044286519578724_n](https://user-images.githubusercontent.com/64292857/151701456-641a8ec6-2d91-4663-9b54-0ab45542a72b.png)
 
 
-# Quickstart
+## Quickstart
 
 ```bash
   # development only
@@ -21,7 +21,7 @@
   docker-compose up
 ```
 
-# Related Works
+## Related Works
 
 
   1. [sean-/flask-skeleton](https://github.com/sean-/flask-skeleton)
