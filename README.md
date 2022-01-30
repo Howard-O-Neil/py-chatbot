@@ -2,7 +2,7 @@
 # Python ChatBot
 
 # Architecture
-![diagram-Page-3 drawio](https://user-images.githubusercontent.com/64292857/151701334-0024bbbd-77c0-49af-be82-4baf321d610f.png)
+![210524615_262279962323802_1525044286519578724_n](https://user-images.githubusercontent.com/64292857/151701456-641a8ec6-2d91-4663-9b54-0ab45542a72b.png)
 
 
 # Quickstart
@@ -21,7 +21,7 @@
   docker-compose up
 ```
 
-# Related Works![151701334-0024bbbd-77c0-49af-be82-4baf321d610f](https://user-images.githubusercontent.com/64292857/151701408-b9f13f65-4538-443d-94a7-37248daa0ea2.png)
+# Related Works
 
 
   1. [sean-/flask-skeleton](https://github.com/sean-/flask-skeleton)
